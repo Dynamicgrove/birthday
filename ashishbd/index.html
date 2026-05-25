@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday My Soul Sister 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    :root {
+      --pink:     #FFB6C1;
+      --dpink:    #FF85A1;
+      --accent:   #FF6B9D;
+      --lavender: #EDD9FF;
+      --purple:   #C9A0DC;
+      --peach:    #FFD5B8;
+      --cream:    #FFF8F9;
+      --text:     #6B3F5E;
+      --mid:      #9B6B8A;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ══ FLOATING PETALS ══ */
+    #petals-bg { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+    .petal {
+      position:absolute; top:-60px; opacity:0;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0%   { transform:translateY(0) rotate(0deg);     opacity:0;   }
+      6%   { opacity:.75; }
+      94%  { opacity:.75; }
+      100% { transform:translateY(108vh) rotate(700deg); opacity:0; }
+    }
+
+    /* ══ NAV ══ */
+    nav {
+      position:fixed; top:0; width:100%; z-index:300;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(16px);
+      padding:13px 24px;
+      display:flex; justify-content:center; align-items:center;
+      gap:22px; flex-wrap:wrap;
+      border-bottom:2px solid var(--pink);
+      box-shadow:0 3px 18px rgba(255,107,157,.1);
+    }
+    nav a {
+      text-decoration:none; color:var(--mid);
+      font-weight:700; font-size:12px;
+      letter-spacing:1.1px; text-transform:uppercase;
+      transition:color .2s;
+    }
+    nav a:hover { color:var(--accent); }
+
+    /* ══ HERO ══ */
+    #hero {
+      min-height:100vh;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      text-align:center; padding:130px 28px 90px;
+      position:relative; z-index:1;
+      background:linear-gradient(148deg, #FFF0F5 0%, #F3E8FF 55%, #FFF0FA 100%);
+      overflow:hidden;
+    }
+    #hero::before {
+      content:''; position:absolute;
+      width:540px; height:540px; border-radius:50%;
+      background:radial-gradient(circle,rgba(255,182,193,.38) 0%,transparent 70%);
+      top:-110px; left:-140px;
+      animation:blob 6s ease-in-out infinite;
+    }
+    #hero::after {
+      content:''; position:absolute;
+      width:440px; height:440px; border-radius:50%;
+      background:radial-gradient(circle,rgba(201,160,220,.3) 0%,transparent 70%);
+      bottom:-90px; right:-120px;
+      animation:blob 7s ease-in-out infinite reverse;
+    }
+    @keyframes blob { 0%,100%{transform:scale(1);} 50%{transform:scale(1.13);} }
+
+    .sparkle {
+      position:absolute; pointer-events:none; z-index:2;
+      animation:twinkle 2.8s ease-in-out infinite;
+    }
+    @keyframes twinkle {
+      0%,100%{opacity:0; transform:scale(0) rotate(0deg);}
+      50%    {opacity:1; transform:scale(1) rotate(180deg);}
+    }
+
+    .hero-row {
+      font-size:52px; display:flex; gap:16px; margin-bottom:22px;
+      z-index:2; position:relative;
+      animation:bob 3s ease-in-out infinite;
+    }
+    @keyframes bob { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
+
+    .hero-pill {
+      display:inline-block;
+      font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase;
+      color:var(--purple);
+      background:rgba(201,160,220,.15);
+      border:1px solid rgba(201,160,220,.4);
+      padding:6px 24px; border-radius:60px;
+      margin-bottom:22px; z-index:2; position:relative;
+    }
+
+    h1.hero-title {
+      font-family:'Pacifico', cursive;
+      font-size:clamp(48px,8.5vw,108px);
+      color:var(--accent); line-height:1.05;
+      text-shadow:4px 4px 0 rgba(255,107,157,.17);
+      z-index:2; position:relative;
+    }
+    .hero-name {
+      font-family:'Pacifico', cursive;
+      font-size:clamp(28px,5vw,68px);
+      background:linear-gradient(135deg,#FF6B9D 0%,#C9A0DC 52%,#FFB347 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      margin:10px 0 18px; z-index:2; position:relative;
+    }
+    .hero-sub {
+      font-family:'Dancing Script', cursive;
+      font-size:clamp(20px,3.2vw,38px);
+      color:var(--purple); margin-bottom:24px;
+      z-index:2; position:relative;
+    }
+
+    .dist-badge {
+      display:inline-flex; align-items:center; gap:10px;
+      background:white; border:2px solid var(--pink);
+      padding:10px 26px; border-radius:60px;
+      font-size:14px; font-weight:700; color:var(--mid);
+      margin-bottom:32px; z-index:2; position:relative;
+      box-shadow:0 6px 20px rgba(255,107,157,.14);
+    }
+
+    .hero-desc {
+      font-size:16.5px; line-height:1.9; color:var(--mid);
+      max-width:490px; margin-bottom:42px;
+      z-index:2; position:relative;
+    }
+
+    .cta {
+      display:inline-block;
+      background:linear-gradient(135deg,#FF6B9D,#C9A0DC);
+      color:white; text-decoration:none;
+      padding:16px 46px; border-radius:60px;
+      font-weight:700; font-size:15px;
+      box-shadow:0 8px 30px rgba(255,107,157,.44);
+      transition:transform .3s, box-shadow .3s;
+      z-index:2; position:relative;
+    }
+    .cta:hover { transform:translateY(-4px); box-shadow:0 14px 42px rgba(255,107,157,.54); }
+
+    /* ══ SECTION HELPERS ══ */
+    .sw { position:relative; z-index:1; }
+    .sh { text-align:center; padding:72px 20px 36px; }
+    .st {
+      font-family:'Dancing Script', cursive;
+      font-size:clamp(34px,5vw,64px); color:var(--accent); margin-bottom:10px;
+    }
+    .ss { font-size:14.5px; color:var(--mid); letter-spacing:.5px; }
+    .div {
+      display:flex; align-items:center; justify-content:center;
+      gap:12px; margin-top:14px;
+    }
+    .dl { width:90px; height:2px; background:linear-gradient(to right,transparent,var(--pink),transparent); border-radius:2px; }
+
+    /* ══ STORY CARDS ══ */
+    #story { background:linear-gradient(135deg,#FFF0FA 0%,#EDE0FF 100%); padding:0 28px 80px; }
+    .story-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+      gap:22px; max-width:960px; margin:0 auto;
+    }
+    .sc {
+      background:white; border-radius:22px; padding:30px 20px; text-align:center;
+      box-shadow:0 8px 26px rgba(255,107,157,.11); border-top:4px solid var(--pink);
+      transition:transform .3s;
+    }
+    .sc:nth-child(2){ border-top-color:var(--purple); }
+    .sc:nth-child(3){ border-top-color:var(--peach); }
+    .sc:nth-child(4){ border-top-color:#A8E6CF; }
+    .sc:hover { transform:translateY(-7px); }
+    .sc-icon { font-size:46px; margin-bottom:14px; }
+    .sc-lbl { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--mid); margin-bottom:6px; }
+    .sc-val { font-family:'Dancing Script', cursive; font-size:22px; color:var(--text); line-height:1.45; }
+
+    /* ══ GALLERY ══ */
+    #gallery { padding:0 32px 90px; background:linear-gradient(180deg,#FFF3FF 0%,#F2E8FF 100%); }
+
+    .gallery-grid {
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);   /* 3 cols = 2 rows of 3 = 6 cards */
+      gap:30px; max-width:1000px; margin:0 auto;
+    }
+    @media(max-width:750px){ .gallery-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:480px){ .gallery-grid{ grid-template-columns:1fr; } }
+
+    .pc {
+      background:white; border-radius:18px;
+      padding:13px 13px 22px;
+      box-shadow:0 8px 28px rgba(255,107,157,.13);
+      position:relative; cursor:pointer;
+      transform:rotate(var(--r,0deg));
+      transition:transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .35s;
+    }
+    .pc:nth-child(odd)  { --r:-1.8deg; }
+    .pc:nth-child(even) { --r: 1.6deg; }
+    .pc:nth-child(3n)   { --r:-0.7deg; }
+    .pc:hover {
+      transform:rotate(0deg) translateY(-10px) scale(1.03) !important;
+      box-shadow:0 22px 55px rgba(255,107,157,.27); z-index:10;
+    }
+
+    .tape {
+      position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+      width:52px; height:22px;
+      background:rgba(237,217,255,.68); border-radius:3px;
+    }
+
+    /* ── photo frame with heart corner ── */
+    .pc::after {
+      content:'💕';
+      position:absolute; bottom:28px; right:12px;
+      font-size:16px; opacity:.55; pointer-events:none;
+    }
+
+    .pc img {
+      width:100%; height:220px; object-fit:contain;
+      border-radius:10px; display:block;
+    }
+    /* ↑ TELL USER: replace src with their photo file name.
+         Best size: 800 × 600 px, JPG or PNG, under 2 MB */
+
+    .pn {
+      font-family:'Dancing Script', cursive; font-size:18px;
+      color:var(--mid); text-align:center;
+      margin-top:14px; padding:0 8px; line-height:1.55;
+    }
+    .pe { text-align:center; font-size:18px; margin-top:6px; }
+
+    /* ══ ONLINE MOMENTS ══ */
+    #online { padding:0 28px 90px; background:linear-gradient(135deg,#FFF8FF 0%,#EEE0FF 100%); }
+    .om-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+      gap:22px; max-width:1000px; margin:0 auto;
+    }
+    .om {
+      background:white; border-radius:20px; padding:26px 22px;
+      box-shadow:0 6px 22px rgba(201,160,220,.17);
+      border-left:5px solid var(--pink);
+      transition:transform .3s;
+    }
+    .om:nth-child(even){ border-left-color:var(--purple); }
+    .om:nth-child(3n)  { border-left-color:var(--peach); }
+    .om:hover { transform:translateY(-5px); }
+    .om-icon  { font-size:36px; margin-bottom:12px; }
+    .om-title { font-family:'Dancing Script', cursive; font-size:22px; color:var(--text); margin-bottom:8px; }
+    .om-desc  { font-size:14.5px; color:var(--mid); line-height:1.8; }
+
+    /* ══ LETTER ══ */
+    #letter {
+      padding:20px 20px 110px;
+      background:linear-gradient(135deg,#FFF0FA 0%,#EDE0FF 100%);
+      display:flex; flex-direction:column; align-items:center;
+    }
+    .env-wrap { width:100%; max-width:700px; position:relative; }
+    .env-flap {
+      width:100%; height:0;
+      border-left:350px solid transparent;
+      border-right:350px solid transparent;
+      border-top:85px solid #C9A0DC;
+      border-radius:8px 8px 0 0;
+      position:relative; z-index:2;
+      filter:drop-shadow(0 4px 10px rgba(201,160,220,.3));
+    }
+    .letter-box {
+      background:#FFFAF9;
+      border-radius:0 0 26px 26px;
+      padding:54px 64px 76px;
+      box-shadow:0 24px 70px rgba(201,160,220,.28);
+      border:2px solid rgba(255,182,193,.28);
+      position:relative; z-index:1;
+    }
+    .letter-box::before {
+      content:''; position:absolute; inset:18px;
+      border:1.5px dashed rgba(255,182,193,.4); border-radius:12px;
+      pointer-events:none;
+    }
+    .letter-lines {
+      position:absolute; inset:40px;
+      background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(255,182,193,.18) 31px,rgba(255,182,193,.18) 32px);
+      border-radius:8px; pointer-events:none;
+    }
+    .lg { font-family:'Dancing Script', cursive; font-size:33px; color:var(--accent); margin-bottom:22px; position:relative; z-index:2; }
+    .lt { font-size:16px; line-height:2.08; color:var(--mid); margin-bottom:14px; position:relative; z-index:2; }
+    .ls { font-family:'Dancing Script', cursive; font-size:29px; color:var(--purple); text-align:right; margin-top:24px; position:relative; z-index:2; }
+    .seal {
+      position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);
+      width:64px; height:64px;
+      background:linear-gradient(135deg,#FF6B9D,#C9A0DC);
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      font-size:30px; box-shadow:0 6px 20px rgba(255,107,157,.44); z-index:5;
+    }
+
+    /* ══ SLIDESHOW ══ */
+    #moments { padding:30px 20px 100px; background:linear-gradient(180deg,#F2E8FF 0%,#FFF0FA 100%); }
+    .ss-wrap  { max-width:700px; margin:0 auto; position:relative; }
+    .sticker  {
+      position:absolute; font-size:36px; z-index:10;
+      animation:wiggle 4s ease-in-out infinite;
+      filter:drop-shadow(2px 3px 4px rgba(0,0,0,.15));
+    }
+    @keyframes wiggle {
+      0%,100%{transform:rotate(var(--rs,-12deg));}
+      50%    {transform:rotate(calc(var(--rs,-12deg) + 8deg));}
+    }
+    .slide { display:none; }
+    .slide.active { display:block; animation:popIn .75s cubic-bezier(.34,1.56,.64,1); }
+    @keyframes popIn { from{opacity:0;transform:scale(.82) rotate(-4deg);} to{opacity:1;transform:scale(1) rotate(0);} }
+    .si { border-radius:28px; overflow:hidden; box-shadow:0 20px 60px rgba(201,160,220,.35); position:relative; }
+    .si img { width:100%; height:420px; object-fit:cover; display:block; }
+    .sc2 {
+      position:absolute; bottom:0; left:0; right:0;
+      background:linear-gradient(transparent,rgba(90,40,80,.78));
+      padding:36px 30px 24px;
+      font-family:'Dancing Script', cursive; font-size:26px; color:white; text-align:center;
+    }
+    .ctrl { display:flex; justify-content:center; align-items:center; gap:18px; margin-top:28px; }
+    .cbtn {
+      background:white; border:2px solid var(--pink);
+      width:52px; height:52px; border-radius:50%;
+      font-size:20px; cursor:pointer; color:var(--accent);
+      display:flex; align-items:center; justify-content:center;
+      transition:all .3s; box-shadow:0 4px 14px rgba(255,107,157,.14);
+    }
+    .cbtn:hover { background:var(--accent); color:white; transform:scale(1.1); }
+    .dots2  { display:flex; gap:9px; }
+    .dot2   { width:11px; height:11px; border-radius:50%; background:var(--pink); cursor:pointer; transition:all .3s; }
+    .dot2.active { background:var(--accent); transform:scale(1.35); }
+
+    /* ══ WISHES ══ */
+    #wishes { padding:20px 28px 90px; background:linear-gradient(180deg,#FFF0FA 0%,#F8F0FF 100%); }
+    .wish-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(195px,1fr));
+      gap:20px; max-width:900px; margin:0 auto;
+    }
+    .wc {
+      background:white; border-radius:20px; padding:26px 18px; text-align:center;
+      box-shadow:0 6px 22px rgba(255,107,157,.1); border-top:4px solid var(--pink);
+      transition:transform .3s;
+    }
+    .wc:nth-child(2){ border-top-color:var(--purple); }
+    .wc:nth-child(3){ border-top-color:var(--peach); }
+    .wc:nth-child(4){ border-top-color:#A8E6CF; }
+    .wc:nth-child(5){ border-top-color:#FFD700; }
+    .wc:nth-child(6){ border-top-color:var(--dpink); }
+    .wc:hover { transform:translateY(-7px); }
+    .wi { font-size:42px; margin-bottom:12px; }
+    .wt { font-family:'Dancing Script', cursive; font-size:19px; color:var(--text); line-height:1.55; }
+
+    /* ══ FOOTER ══ */
+    footer {
+      background:linear-gradient(135deg,#FF85A1 0%,#C9A0DC 100%);
+      padding:52px 24px; text-align:center; color:white;
+      position:relative; overflow:hidden;
+    }
+    footer::before {
+      content:'🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸';
+      display:block; font-size:22px; letter-spacing:6px;
+      margin-bottom:22px; opacity:.5;
+    }
+    .fm { font-family:'Dancing Script', cursive; font-size:40px; margin-bottom:10px; }
+    .fs { font-size:15px; opacity:.88; letter-spacing:.4px; line-height:1.75; }
+    .fe { font-size:32px; margin:18px 0 10px; letter-spacing:8px; }
+
+    /* ══ LIGHTBOX ══ */
+    #lb {
+      display:none; position:fixed; inset:0;
+      background:rgba(80,20,60,.88); z-index:999;
+      align-items:center; justify-content:center;
+      backdrop-filter:blur(10px);
+    }
+    #lb.open { display:flex; }
+    #lb img {
+      max-width:88vw; max-height:78vh; border-radius:20px;
+      box-shadow:0 20px 60px rgba(0,0,0,.5); animation:popIn .4s ease;
+    }
+    #lb-x {
+      position:absolute; top:24px; right:32px;
+      color:white; font-size:38px; cursor:pointer; line-height:1;
+      transition:transform .2s;
+    }
+    #lb-x:hover { transform:rotate(90deg) scale(1.2); }
+    #lb-note {
+      position:absolute; bottom:32px; left:50%; transform:translateX(-50%);
+      font-family:'Dancing Script', cursive; font-size:26px; color:white;
+      text-align:center; white-space:nowrap; text-shadow:0 2px 8px rgba(0,0,0,.5);
+    }
+
+    /* ══ SCROLL REVEAL ══ */
+    .reveal {
+      opacity:0; transform:translateY(30px);
+      transition:opacity .65s ease, transform .65s cubic-bezier(.34,1.56,.64,1);
+    }
+    .reveal.show { opacity:1; transform:translateY(0); }
+
+    /* ══ RESPONSIVE ══ */
+    @media(max-width:640px){
+      nav { gap:12px; padding:10px 14px; }
+      nav a { font-size:10.5px; }
+      .letter-box { padding:36px 20px 60px; }
+      #gallery { padding:0 14px 60px; }
+      .env-flap { border-left-width:50vw; border-right-width:50vw; }
+      .si img { height:270px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- petals -->
+<div id="petals-bg"></div>
+
+<!-- lightbox -->
+<div id="lb">
+  <span id="lb-x">✕</span>
+  <img id="lb-img" src="" alt="">
+  <p id="lb-note"></p>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="#hero">🏠 Home</a>
+  <a href="#story">💫 Our Story</a>
+  <a href="#gallery">📸 Gallery</a>
+  <a href="#letter">💌 Letter</a>
+  <a href="#moments">✨ Moments</a>
+  <a href="#wishes">🎀 Wishes</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero" class="sw">
+  <span class="sparkle" style="top:17%;left:7%;animation-delay:0s">✨</span>
+  <span class="sparkle" style="top:27%;right:8%;animation-delay:1s">⭐</span>
+  <span class="sparkle" style="top:73%;left:11%;animation-delay:1.5s">💫</span>
+  <span class="sparkle" style="top:66%;right:7%;animation-delay:.5s">🌟</span>
+  <span class="sparkle" style="top:10%;right:17%;animation-delay:2s">✨</span>
+
+  <div class="hero-row">🌸 🧸 🌷 🐶 📚 🌺</div>
+  <div class="hero-pill">✦ Sister From Another Mother ✦</div>
+  <h1 class="hero-title">Happy Birthday!</h1>
+  <div class="hero-name">My Soul Sister 🎀</div>
+  <p class="hero-sub">"Some souls just find each other — even across the miles"</p>
+
+  <div class="dist-badge">
+    <span>🌍</span> Long Distance · Never Met · Always Close <span>💕</span>
+  </div>
+
+  <p class="hero-desc">
+    We've never shared the same sky at the same time, never sat side by side —
+    but somehow you've become one of the most real, beautiful people in my life.
+    Today, across every mile between us, I'm celebrating <strong>you</strong>. 🌸
+  </p>
+  <a href="#story" class="cta">✦ Our Story ✦</a>
+</section>
+
+<!-- ══ STORY CARDS ══ -->
+<section id="story" class="sw">
+  <div class="sh" style="background:linear-gradient(135deg,#FFF0FA 0%,#EDE0FF 100%);">
+    <h2 class="st">How We Found Each Other 💫</h2>
+    <p class="ss">A friendship that defies distance</p>
+    <div class="div"><div class="dl"></div><span>🌸</span><div class="dl"></div></div>
+  </div>
+  <div style="background:linear-gradient(135deg,#FFF0FA 0%,#EDE0FF 100%);padding:10px 28px 80px;">
+    <div class="story-grid">
+      <div class="sc reveal">
+        <div class="sc-icon">📱</div>
+        <div class="sc-lbl">How we met</div>
+        <div class="sc-val">Strangers on a screen who somehow just clicked</div>
+      </div>
+      <div class="sc reveal">
+        <div class="sc-icon">🌍</div>
+        <div class="sc-lbl">Distance between us</div>
+        <div class="sc-val">Miles apart — but never truly far</div>
+      </div>
+      <div class="sc reveal">
+        <div class="sc-icon">🤝</div>
+        <div class="sc-lbl">Times we've met IRL</div>
+        <div class="sc-val">Zero times... but it feels like forever 🥺</div>
+      </div>
+      <div class="sc reveal">
+        <div class="sc-icon">💞</div>
+        <div class="sc-lbl">What you are to me</div>
+        <div class="sc-val">Sister from another mother — always & forever</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALLERY — 6 PHOTOS ══ -->
+<!--
+  HOW TO ADD YOUR PHOTOS:
+  1. Put this HTML file + all photos in the SAME folder
+  2. Replace each src="photo1.jpg" with your actual file name
+  3. Best photo size: 800 × 600 px | Format: JPG or PNG | Max: 2 MB each
+  4. You can also edit each caption inside the <p class="pn"> tag
+-->
+<section id="gallery" class="sw">
+  <div class="sh" style="background:linear-gradient(180deg,#FFF3FF 0%,#F2E8FF 100%);">
+    <h2 class="st">Her Little Gallery 📸</h2>
+    
+    <div class="div"><div class="dl"></div><span>🌷</span><div class="dl"></div></div>
+  </div>
+  <div style="background:linear-gradient(180deg,#FFF3FF 0%,#F2E8FF 100%);padding:10px 32px 90px;">
+    <div class="gallery-grid">
+
+      <!-- ── Photo 1 ── replace src with your file e.g. src="photo1.jpg" -->
+      <div class="pc reveal" onclick="openLb(this)">
+        <div class="tape"></div>
+        <img src="images/imageone.jpg" alt="Photo 1" width="800px" height="600px"
+             data-note="Pure sunshine, that's what you are ☀️">
+        <p class="pn">"Pure sunshine, that's what you are ☀️"</p>
+        <div class="pe">🌸 🧸 💕</div>
+      </div>
+
+      <!-- ── Photo 2 ── replace src with your file e.g. src="photo2.jpg" -->
+      <div class="pc reveal" onclick="openLb(this)">
+        <div class="tape"></div>
+        <img src="images/imagethree.jpg" alt="Photo 2" width="800px" height="600px"
+             data-note="Beautiful inside and out 🌺">
+        <p class="pn">"Beautiful inside and out 🌺"</p>
+        <div class="pe">🐶 🌺 ✨</div>
+      </div>
+
+      <!-- ── Photo 3 ── replace src with your file e.g. src="photo3.jpg" -->
+      <div class="pc reveal" onclick="openLb(this)">
+        <div class="tape"></div>
+        <img src="images/imagetwo.jpg" alt="Photo 3" width="800px" height="600px"
+             data-note="That smile could light up any room 😊">
+        <p class="pn">"That smile could light up any room 😊"</p>
+        <div class="pe">📚 🌸 💫</div>
+      </div>
+
+      <!-- ── Photo 4 ── replace src with your file e.g. src="photo4.jpg" -->
+      <div class="pc reveal" onclick="openLb(this)">
+        <div class="tape"></div>
+        <img src="images/imagefour.jpg" alt="Photo 4" width="800px" height="600px"
+             data-note="My favourite human, always 🌍">
+        <p class="pn">"My favourite human, always 🌍"</p>
+        <div class="pe">🧸 🎀 🌷</div>
+      </div>
+
+      <!-- ── Photo 5 ── replace src with your file e.g. src="photo5.jpg" -->
+      <div class="pc reveal" onclick="openLb(this)">
+        <div class="tape"></div>
+        <img src="images/imagesix.jpg" alt="Photo 5" width="800px" height="600px"
+             data-note="Rare kind of magic, that's you 🌟">
+        <p class="pn">"Rare kind of magic, that's you 🌟"</p>
+        <div class="pe">🌺 🐶 ⭐</div>
+      </div>
+
+      <!-- ── Photo 6 ── replace src with your file e.g. src="photo6.jpg" -->
+      <div class="pc reveal" onclick="openLb(this)">
+        <div class="tape"></div>
+        <img src="images/imagefive.jpg" alt="Photo 6" width="800px" height="600px"
+             data-note="Happy Birthday, my forever person 🎂">
+        <p class="pn">"Happy Birthday, my forever person 🎂"</p>
+        <div class="pe">📚 💕 🌸</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ THINGS ONLY WE KNOW ══ -->
+<section id="online" class="sw">
+  <div class="sh" style="background:linear-gradient(135deg,#FFF8FF 0%,#EEE0FF 100%);">
+    <h2 class="st">Things Only We Know 🤫</h2>
+    <p class="ss">The little moments that built us</p>
+    <div class="div"><div class="dl"></div><span>💫</span><div class="dl"></div></div>
+  </div>
+  <div style="background:linear-gradient(135deg,#FFF8FF 0%,#EEE0FF 100%);padding:10px 28px 90px;">
+    <div class="om-grid">
+      <div class="om reveal">
+        <div class="om-icon">🌙</div>
+        <div class="om-title">Late Night Chats</div>
+        <div class="om-desc">When the whole world was asleep, we were talking — about life, dreams, silly stuff, and everything in between.</div>
+      </div>
+      <div class="om reveal">
+        <div class="om-icon">😭</div>
+        <div class="om-title">Crying Together</div>
+        <div class="om-desc">Even through a screen, you showed up for me when it mattered. No one else gets that kind of loyalty.</div>
+      </div>
+      <div class="om reveal">
+        <div class="om-icon">😂</div>
+        <div class="om-title">Laughing Until It Hurts</div>
+        <div class="om-desc">Our inside jokes nobody else would understand — honestly our humour is on a completely different level.</div>
+      </div>
+      <div class="om reveal">
+        <div class="om-icon">🎵</div>
+        <div class="om-title">Song & Voice Notes</div>
+        <div class="om-desc">Every playlist you sent, every long voice note — tiny pieces of you that made my day better every time.</div>
+      </div>
+      <div class="om reveal">
+        <div class="om-icon">🤗</div>
+        <div class="om-title">One Day — IRL</div>
+        <div class="om-desc">We haven't met yet, but the day we do? That hug is going to fix something in both of us. I just know it.</div>
+      </div>
+      <div class="om reveal">
+        <div class="om-icon">🛡️</div>
+        <div class="om-title">My Safe Space</div>
+        <div class="om-desc">You are the kind of person I can say anything to — no judgment, just warmth. That's rare and that's everything.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LETTER ══ -->
+<section id="letter" class="sw">
+  <div class="sh">
+    <h2 class="st">A Letter Across the Miles 💌</h2>
+    <div class="div"><div class="dl"></div><span>🌷</span><div class="dl"></div></div>
+  </div>
+  <div class="env-wrap">
+    <div class="env-flap"></div>
+    <div class="letter-box">
+      <div class="letter-lines"></div>
+
+      <p class="lg">My Dearest Soul Sister,</p>
+
+      <p class="lt">There's something almost magical about the fact that we found each other — two people
+      living under completely different skies, in completely different worlds, who somehow just
+      understood each other from the very beginning. 🌸</p>
+
+      <p class="lt">We've never sat in the same room. We've never had coffee together. We've never walked
+      side by side. And yet — you know me in ways that people who've been around me for years
+      simply don't. That's not distance. That's destiny. 🌍</p>
+
+      <p class="lt">You are my sister from another mother — not by blood, but by something stronger.
+      By choice. By those 2 AM conversations that went on until dawn. By the voice notes that felt
+      like hugs. By all the little things that quietly built something unbreakable. 🧸</p>
+
+      <p class="lt">On your birthday, I wish I could be right there with you — to pull you into the
+      longest hug and tell you face to face just how extraordinary you are. But since the miles
+      won't allow it today, please know this: you are so deeply loved, even from here. 💕</p>
+
+      <p class="lt">One day — I promise — we'll finally meet. And when that day comes, it's going to feel
+      like coming home. Until then, happy birthday my beautiful, brilliant, irreplaceable
+      friend. May today shower you in everything you deserve. 🌺</p>
+
+      <p class="ls">
+        Yours, from across the world,<br>
+        Your sibling by soul 🎀
+      </p>
+
+      <div class="seal">💌</div>
+    </div>
+  </div>
+</section>
+
+<!--  -->
+
+<!-- ══ WISHES ══ -->
+<section id="wishes" class="sw">
+  <div class="sh">
+    <h2 class="st">Birthday Wishes For You 🎀</h2>
+    <div class="div"><div class="dl"></div><span>🧸</span><div class="dl"></div></div>
+  </div>
+  <div class="wish-grid">
+    <div class="wc reveal"><div class="wi">🌸</div><div class="wt">May every day feel as warm as our best conversations</div></div>
+    <div class="wc reveal"><div class="wi">💪</div><div class="wt">May you always find strength even when it feels impossible</div></div>
+    <div class="wc reveal"><div class="wi">✈️</div><div class="wt">May we finally meet in person — sooner than we think</div></div>
+    <div class="wc reveal"><div class="wi">😂</div><div class="wt">May you always have reasons to laugh until your stomach hurts</div></div>
+    <div class="wc reveal"><div class="wi">🌟</div><div class="wt">May all your dreams find their way to you this year</div></div>
+    <div class="wc reveal"><div class="wi">💕</div><div class="wt">May you always know how loved you are — from here to anywhere</div></div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <p class="fm">Happy Birthday, My Soul Sister! (Behna) 🎂</p>
+  <p class="fs">
+    One day the miles between us will be zero.<br>
+    Until then — know you're always in my heart. 💕
+  </p>
+  <div class="fe">🧸 🌸 🐶 📚 🌺</div>
+  <p style="font-size:13px;opacity:.7;margin-top:10px">Made with 💕 across the distance — just for you</p>
+</footer>
+
+<!-- ══ SCRIPTS ══ -->
+<script>
+  /* PETALS */
+  const icons = ['🌸','🌺','🌷','🌼','✨','💕','🎀','💫','⭐','🌟'];
+  const bg = document.getElementById('petals-bg');
+  function spawnPetal() {
+    const el = document.createElement('span');
+    el.className = 'petal';
+    el.textContent = icons[Math.floor(Math.random() * icons.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.fontSize = (13 + Math.random() * 16) + 'px';
+    const d = 9 + Math.random() * 10;
+    el.style.animationDuration = d + 's';
+    el.style.animationDelay = (Math.random() * 4) + 's';
+    bg.appendChild(el);
+    setTimeout(() => el.remove(), (d + 5) * 1000);
+  }
+  for (let i = 0; i < 22; i++) spawnPetal();
+  setInterval(spawnPetal, 750);
+
+ 
+
+
+  /* LIGHTBOX */
+  const lb    = document.getElementById('lb');
+  const lbImg = document.getElementById('lb-img');
+  const lbN   = document.getElementById('lb-note');
+  document.getElementById('lb-x').onclick = closeLb;
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  function openLb(card) {
+    const img = card.querySelector('img');
+    lbImg.src = img.src;
+    lbN.textContent = img.dataset.note || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* SCROLL REVEAL */
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('show'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>
